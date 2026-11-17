@@ -75,6 +75,7 @@ class CaseSession:
             "case": {"id": self.case.id, "title": self.case.title, "duration_minutes": self.case.duration_minutes},
             "vitals": self.case.initial_vitals,
             "actions": [{"id": key, "label": item["label"]} for key, item in self.case.actions.items()],
+            "completed_actions": self.completed_actions.copy(),
             "timeline": self.events,
             "score": self.score,
             "missed_critical_actions": missed,
